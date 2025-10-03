@@ -1,4 +1,4 @@
-   body {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,66 +24,65 @@ body::before {
   z-index: -1; /* Keep it behind everything */
 }
 
+/* Full login container */
+.login-container {
+  display: flex;
+  width: 850px;
+  max-width: 95%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
 
-    /* Full login container */
-    .login-container {
-      display: flex;
-      width: 850px;
-      max-width: 95%;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(0,0,0,0.1);
-      background: #fff;
-    }
+/* Left side: Logo panel fills completely */
+.login-left {
+  flex: 1; /* Equal size with form */
+  background: url("logo.png") no-repeat center center;
+  background-size: cover; /* Make logo fill the panel */
+  background-color: #013d8d; /* Fallback if logo doesn’t fill */
+}
 
-    /* Left side: Logo panel fills completely */
-    .login-left {
-      flex: 1; /* Equal size with form */
-      background: url("logo.png") no-repeat center center;
-      background-size: cover; /* Make logo fill the panel */
-      background-color: #013D8D; /* Fallback if logo doesn’t fill */
-    }
+/* Right side: Form (equal size) */
+.login-right {
+  flex: 1;
+  background: #fff;
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    /* Right side: Form (equal size) */
-    .login-right {
-      flex: 1;
-      background: #fff;
-      padding: 3em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+/* Heading */
+#heading {
+  text-align: center;
+  margin-bottom: 1.5em;
+  color: #000;
+  font-size: 1.6em;
+  font-weight: 600;
+}
 
-    /* Heading */
-    #heading {
-      text-align: center;
-      margin-bottom: 1.5em;
-      color: #000;
-      font-size: 1.6em;
-      font-weight: 600;
-    }
+/* Input fields */
+.field {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  background: #fff;
+  box-shadow: inset 2px 4px 8px rgba(0, 0, 0, 0.05);
+}
 
-    /* Input fields */
-    .field {
-      display: flex;
-      align-items: center;
-      border-radius: 8px;
-      padding: 0.8em;
-      margin-bottom: 1em;
-      background: #fff;
-      box-shadow: inset 2px 4px 8px rgba(0,0,0,0.05);
-    }
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1em;
+}
 
-    .input-field {
-      background: none;
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 1em;
-    }
-
-    /* Buttons */
-    /* Buttons container */
+/* Buttons */
+/* Buttons container */
 .btn {
   display: flex;
   justify-content: center; /* center horizontally */
@@ -92,7 +91,7 @@ body::before {
 
 /* Login button only */
 .button1 {
-  padding: 0.8em 2.5em;        /* bigger button */
+  padding: 0.8em 2.5em; /* bigger button */
   border-radius: 8px;
   border: none;
   background-color: #252525;
@@ -101,26 +100,25 @@ body::before {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .button1:hover {
-  background-color: #013D8D;
+  background-color: #013d8d;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
+/* Responsive: stack vertically */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
 
-    /* Responsive: stack vertically */
-    @media (max-width: 768px) {
-      .login-container {
-        flex-direction: column;
-      }
-
-      .login-left {
-        min-height: 200px; /* visible logo on small screens */
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-    }
+  .login-left {
+    min-height: 200px; /* visible logo on small screens */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
