@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <title>OJT Attendance Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <!-- Logo -->
+      <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo-img" />
+      </div>
+
+      <!-- Toggle Arrow Button -->
+      <button id="toggleMenu" class="toggle-btn">
+        <span class="arrow">></span>
+      </button>
+
+      <!-- Sidebar Links -->
+      <div id="sidebarLinks">
+        <a href="#" class="sidebar-link active" onclick="setActive(this, 'dashboard')">Dashboard</a>
+        <a href="#" class="sidebar-link" onclick="setActive(this, 'accomplishment')">Accomplishments</a>
+        <a href="#" class="sidebar-link" onclick="setActive(this, 'task')">Task</a>
+        <a href="#" class="sidebar-link" onclick="setActive(this, 'attendance')">Daily Attendance</a>
+        <a href="#" class="sidebar-link" onclick="setActive(this, 'hours')">Total Hours</a>
+        <a href="#" class="sidebar-link" onclick="setActive(this, 'addOjt')">Status</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Dashboard Section -->
+      <div id="dashboard" class="section">
+        <h2>Dashboard Overview</h2>
+        <div class="card p-3">
+          <h4>Select OJT to View & Download Report:</h4>
+          <select id="ojtSelect" class="form-select mb-3"></select>
+          <button id="downloadBtn" class="btn btn-success">Download Excel Report</button>
+          <div class="mt-3">
+            <h5>Total Hours:</h5>
+            <p id="totalHours" style="font-size: 20px; font-weight: bold; color: #014d8d">0 hrs</p>
+          </div>
+          <div class="mt-4">
+            <h5>Attendance Logs</h5>
+            <table class="table table-striped" id="reportTable">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Time In</th>
+                  <th>Status In</th>
+                  <th>Time Out</th>
+                  <th>Status Out</th>
+                  <th>Total Hours</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Sections -->
+      <div id="accomplishment" class="section" style="display: none">
+        <h2>OJT Accomplishment Report</h2>
+        <div class="card p-3"><p>Display accomplishment reports here...</p></div>
+      </div>
+
+      <div id="task" class="section" style="display: none">
+        <h2>Task</h2>
+        <div class="card p-3"><p>List of assigned tasks...</p></div>
+      </div>
+
+      <div id="attendance" class="section" style="display: none">
+        <h2>Daily Attendance</h2>
+        <div class="card p-3"><p>Attendance logs here...</p></div>
+      </div>
+
+      <div id="hours" class="section" style="display: none">
+        <h2>No. of Hours per OJT</h2>
+        <div class="card p-3"><p>Show calculated OJT hours here...</p></div>
+      </div>
+
+      <div id="addOjt" class="section" style="display: none">
+        <h2>Add OJT Name / Time In-Out</h2>
+        <div class="card p-3">
+          <form id="ojtForm">
+            <div class="mb-3">
+              <label class="form-label">OJT Name</label>
+              <input type="text" class="form-control" id="ojtName" placeholder="Enter OJT name" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Time In</label>
+              <input type="time" class="form-control" id="timeIn" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Time Out</label>
+              <input type="time" class="form-control" id="timeOut" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Record</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- SheetJS for Excel Export -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

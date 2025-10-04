@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0e1738;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.sidebar h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background: #2e6ef7;
+  text-decoration: none;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+.logo-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-img {
+  width: 100%; /* make it exactly sidebar width */
+  height: auto; /* keep proportions */
+  display: block; /* removes unwanted gaps */
+  border-bottom: 2px solid #01386d; /* optional divider line */
+}
+.sidebar {
+  padding-top: 0; /* make sure nothing pushes logo down */
+}
+/* Toggle Button */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 8px 0 8px 16px;
+  display: flex;
+  align-items: center;
+}
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.arrow.down {
+  transform: rotate(90deg);
+}
+
+/* Sidebar Links */
+.sidebar-link {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s ease, max-height 0.4s ease, opacity 0.4s ease,
+    padding 0.4s ease;
+  overflow: hidden;
+  max-height: 40px;
+  opacity: 1;
+}
+.sidebar-link.hidden {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 20px;
+}
+.sidebar-link:hover {
+  background: #2e6ef7;
+}
+.sidebar-link.active {
+  background: #011f47;
+  font-weight: bold;
+}
+
+/* Content */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  min-height: 100vh;
+}
+.card {
+  margin-bottom: 20px;
+}
+.section {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
